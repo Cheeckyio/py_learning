@@ -145,5 +145,43 @@ else:                           # No print here either
     else:
         print("Cold and gloomy")    
         
-        
-    
+#THE MATCH case..these are used when you want to check a value against multiple patterns
+#used when you want to match patterns not just exact values
+#start by declaring a variable or a function and using the match keyword to 
+#compare against a list of options
+day = "wednesday"
+match day:
+    case "monday":
+        print("start of the week")
+    case "tuesday":
+        print("start of ucl")
+    case "wednesday":
+        print("yh i got you")        
+    case "thursday":
+        print("another day?")
+    case _:
+        print("never mind") #the default case is not always needed
+
+
+grade = "A"
+
+match grade:
+    case "A":
+        print("Excellent!")
+    case "B":
+        print("Good job!")
+    case "C":
+        print("Okay")
+
+
+def handle_status(status):
+    match status:
+        case "success":
+            return "Operation completed"
+        case "error":
+            return "Something went wrong"
+        case "pending":
+            return "Please wait"
+        case _:
+            return "Unknown status"
+print(handle_status("success"))
